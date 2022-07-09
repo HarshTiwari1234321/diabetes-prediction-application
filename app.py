@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[ ]:
 
 
 import streamlit as st
@@ -11,7 +8,7 @@ from PIL import Image
 
 st.set_page_config(page_title="Diabetes Prediction App", page_icon=None, layout='centered', initial_sidebar_state='auto')
 
-# In[ ]:
+
 
 
 @st.cache(allow_output_mutation=True)
@@ -21,7 +18,7 @@ def load(scaler_path, model_path):
     return sc , model
 
 
-# In[ ]:
+
 
 
 def inference(row, scaler, model, cols):
@@ -33,7 +30,7 @@ def inference(row, scaler, model, cols):
     else: return "This person has high chances of having diabetics!"
 
 
-# In[ ]:
+
 
 
 st.title('Diabetes Prediction App')
@@ -54,7 +51,7 @@ dpf =           st.sidebar.slider("Diabetics Pedigree Function", 0.000, 2.420, 0
 row = [pregnancies, glucose, bloodpressure, skinthickness, insulin, bmi, dpf, age]
 
 
-# In[ ]:
+
 
 
 if (st.button('Find Health Status')):
